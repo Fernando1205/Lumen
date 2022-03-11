@@ -16,3 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+$router->group(['prefix' => 'books'], function() use($router) {
+    $router->get('', 'BookController@index');
+    $router->post('','BookController@store');
+});
