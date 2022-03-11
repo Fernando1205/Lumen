@@ -21,4 +21,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'books'], function() use($router) {
     $router->get('', 'BookController@index');
     $router->post('','BookController@store');
+    $router->get('{id}', 'BookController@show');
+    $router->delete('{id}', 'BookController@delete');
+    $router->post('update/{id}', 'BookController@update');
 });
